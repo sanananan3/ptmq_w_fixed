@@ -23,7 +23,7 @@ from quant.observer import ObserverBase
 
 logger = logging.getLogger('ptmq')
 
-CONFIG_PATH = '/content/ptmq_log_after/config/gpu_config.yaml'
+CONFIG_PATH = '/content/ptmq_w_fixed/config/gpu_config.yaml'
 cfg = parse_config(CONFIG_PATH)
 
 def quantize_model(model, config):
@@ -187,7 +187,7 @@ def main(config_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='configuration',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--config', default='/content/ptmq_log_after/config/gpu_config.yaml', type=str, help='Path to config file')
+    parser.add_argument('--config', default='/content/ptmq_w_fixed/config/gpu_config.yaml', type=str, help='Path to config file')
     args = parser.parse_args()
     
     main(args.config)

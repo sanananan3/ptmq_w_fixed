@@ -10,7 +10,7 @@ from quant.quant_module import QuantizedModule, QuantizedBlock
 from quant.fake_quant import LSQFakeQuantize, LSQPlusFakeQuantize, QuantizeBase
 logger = logging.getLogger('ptmq')
 
-CONFIG_PATH = '/content/ptmq_log_after/config/gpu_config.yaml'
+CONFIG_PATH = '/content/ptmq_w_fixed/config/gpu_config.yaml'
 cfg = parse_config(CONFIG_PATH)
 
 def save_inp_oup_data(model, module, calib_data: list, store_inp=False, store_oup=False,
