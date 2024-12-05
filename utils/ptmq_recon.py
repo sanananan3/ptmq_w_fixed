@@ -187,11 +187,11 @@ class LossFunction:
                     round_loss += self.weight * (1 - ((round_vals - .5).abs() * 2).pow(b)).sum()
                     
         # Get total loss
-        total_loss = recon_loss + round_loss
+        total_loss = round_loss
         """
         """
         # TEMP
-        self.recon_loss = recon_loss
+ 
         self.round_loss = round_loss
        #  self.weight_loss = weight_loss
         
@@ -283,19 +283,7 @@ def ptmq_reconstruction(q_model, fp_model, q_module, name, fp_module, calib_data
 
         if isinstance(q_module, QuantizedBlock):
             f_l = q_module.f_l
-            # f_m = q_module.f_m
-            # f_h = q_module.f_h
-           # f_lmh = q_module.f_lmh
-           # f_mixed = q_block_output
-        # Compute loss
-            # w_l_conv1 = q_module.w_l_conv1
-            # w_m_conv1 = q_module.w_m_conv1
-            # w_h_conv1 = q_module.w_h_conv1
-            
-            # w_l_conv2 = q_module.w_l_conv2
-            # w_m_conv2 = q_module.w_m_conv2
-            # w_h_conv2 = q_module.w_h_conv2 
-
+      
         loss = loss_func(fp_block_output, q_block_output, f_l)
 
         # clear old gradients

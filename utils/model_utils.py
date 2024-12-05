@@ -57,14 +57,7 @@ class QuantBasicBlock(QuantizedBlock):
         residual = x if self.downsample is None else self.downsample(x)
 
         # Conv1 -> low, mid, high bit-width로 양자화된 출력 계산 
-        
-        # self.w_l_conv1 = self.conv1_relu_low
-        # self.w_m_conv1 = self.conv1_relu_mid
-        # self.w_h_conv1 = self.conv1_relu_high
 
-        # self.w_l_conv2 = self.conv2_low
-        # self.w_m_conv2 = self.conv2_mid
-        # self.w_h_conv2 = self.conv2_high << 일단 이 부분은 뻄 ... 
         
         out_low = self.conv1_relu_low(x)
         # out_mid = self.conv1_relu_mid(x)
